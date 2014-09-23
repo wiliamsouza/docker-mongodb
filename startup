@@ -5,7 +5,7 @@ if [ ! -s /etc/mongod.conf ]; then
     rm /etc/mongod.conf
 fi
 
-if [ ! grep -q mongodb /etc/passwd ]; then
+if ! grep -q mongodb /etc/passwd; then
     adduser --system --no-create-home mongodb
     addgroup --system mongodb
     adduser mongodb mongodb
