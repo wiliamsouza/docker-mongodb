@@ -10,7 +10,7 @@ You can `pull` a ready to use image from Docker
 [index](https://index.docker.io/u/wiliamsouza/) running:
 
 ```
-$ docker.io pull wiliamsouza/mongodb
+$ docker pull wiliamsouza/mongodb
 ```
 
 Or build this repository:
@@ -18,7 +18,7 @@ Or build this repository:
 ```
 $ git clone https://github.com/wiliamsouza/docker-mongodb.git
 $ cd docker-mongodb/
-$ docker.io build -t wiliamsouza/mongodb .
+$ docker build -t wiliamsouza/mongodb .
 ```
 
 Change `wiliamsouza/mongodb` to your Docker index username.
@@ -40,7 +40,7 @@ You pass with `-v` docker option. Don't forget to use absolute path here.
 Shell access:
 
 ```
-$ docker.io run -p 27017:27017 -i \
+$ docker run -p 27017:27017 -i \
 -v `pwd`/volumes/log:/var/log/mongodb \
 -v `pwd`/volumes/lib:/var/lib/mongodb \
 -v `pwd`/volumes/etc:/etc/mongodb \
@@ -53,7 +53,7 @@ forget to start the service running the `startup &` script.
 Usage:
 
 ```
-$ docker.io run --name mongodb -p 27017:27017 -d \
+$ docker run --name mongodb -p 27017:27017 -d \
 -v `pwd`/volumes/log:/var/log/mongodb \
 -v `pwd`/volumes/lib:/var/lib/mongodb \
 -v `pwd`/volumes/etc:/etc/mongodb \
